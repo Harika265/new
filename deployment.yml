@@ -1,18 +1,19 @@
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kubepro-deployment
+  name: nginx-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: kubepro
+      app: nginx
   template:
     metadata:
       labels:
-        app: kubepro
+        app: nginx
     spec:
       containers:
-        - name: kubepro
-          image: hemz1418/web1418
+        - name: nginx
+          image: nginx:1.14.2
           ports:
             - containerPort: 80
